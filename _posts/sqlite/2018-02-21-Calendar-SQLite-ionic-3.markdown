@@ -1,6 +1,6 @@
 ---
 title: "Calendario com SQLite no Ionic 3"
-date: "2016-02-21 15"
+date: "2018-02-21"
 tags: [ionic 3, sqlite, directive]
 ---
 
