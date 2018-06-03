@@ -1,6 +1,6 @@
 ---
 title: "CRUD SQLite no Ionic 3"
-date: "2016-01-08"
+date: "2018-01-08"
 tags: [ionic 3, sqlite]
 ---
 
