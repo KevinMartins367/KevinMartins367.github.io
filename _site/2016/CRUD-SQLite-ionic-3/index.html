@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="Kevin Martins">
+  <title>CRUD SQLite no Ionic 3</title>
+  <meta name="description" content="">
+ 
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Kevin Martins">
+  <meta name="twitter:description" content="">
+
+  <meta property="og:type" content="blog">
+  <meta property="og:image:width" content="800"/>
+  <meta property="og:image:height" content="800"/>
+  <meta property="og:title" content="CRUD SQLite no Ionic 3"/>
+  <meta property="og:description" content=""/>
+  <meta property="og:url" content="http://localhost:4000/2016/CRUD-SQLite-ionic-3/"/>
+  <meta property="og:site_name" content="CRUD SQLite no Ionic 3"/>
+
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/images/favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000//2016/CRUD-SQLite-ionic-3/">
+  <link rel="alternate" type="application/rss+xml" title="Kevin Martins" href="/feed.xml">
+</head>
+
+
+  <body>
+    <span class="mobile btn-mobile-menu">
+  <i class="icon icon-list btn-mobile-menu__icon"></i>
+  <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+</span>
+  
+<header class="panel-cover" style="background-image: url(/images/cover.jpg)">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <a href="/" title="link to home of Kevin Martins">
+          <img src="/images/profile.jpg" class="user-image" alt="My Profile Photo">
+          <h1 class="panel-cover__title panel-title">Kevin Martins</h1>
+        </a>
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">Web & Mobile App Developer</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="link to Kevin Martins blog" class="blog-button">Blog</a></li>
+            </ul>
+          </nav>
+
+          <nav class="cover-navigation navigation--social">
+            <ul class="navigation">
+          
+            
+
+            
+              <!-- Facebook -->
+              <li class="navigation__item">
+                <a href="http://fb.me/KevinMartins367" title="KevinMartins367 on Facebook" target="_blank">
+                  <i class="icon icon-social-facebook"></i>
+                  <span class="label">Facebook</span>
+                </a>
+              </li>
+            
+
+            
+              <!-- LinkedIn -->
+              <li class="navigation__item">
+                <a href="https://www.linkedin.com/in/kevin-martins-010532119" title="kevin-martins-010532119 on LinkedIn" target="_blank">
+                  <i class="icon icon-social-linkedin"></i>
+                  <span class="label">LinkedIn</span>
+                </a>
+              </li>
+            
+
+            
+              <!-- GitHub -->
+              <li class="navigation__item">
+                <a href="https://www.github.com/KevinMartins367" title="KevinMartins367 on GitHub" target="_blank">
+                  <i class="icon icon-social-github"></i>
+                  <span class="label">GitHub</span>
+                </a>
+              </li>
+            
+
+            
+              <!-- Email -->
+              <li class="navigation__item">
+                <a href="mailto:kevincosta13679@outlook.com" title="Email kevincosta13679@outlook.com" target="_blank">
+                  <i class="icon icon-mail"></i>
+                  <span class="label">Email</span>
+                </a>
+              </li>
+                      
+            </ul>
+          </nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+      <div class="content-wrapper__inner">
+        <article class="post-container post-container--single">
+  <header class="post-header">
+    
+    <div class="post-meta">
+      <time datetime="8 Jan 2016" class="post-meta__date date">8 Jan 2016</time> &#8226; <span class="post-meta__tags">on <a href="/tags/#ionic 3">ionic 3</a> <a href="/tags/#sqlite">sqlite</a> </span>
+    </div>
+    <h1 class="post-title">CRUD SQLite no Ionic 3</h1>
+  </header>
+
+  <section class="post">
+    <p>Neste post, iremos implementar algumas funções basicas do SQLite no ionic 3.</p>
+
+<h2 id="instalações-necessitarias">Instalações necessitarias:</h2>
+
+<ol>
+  <li>ionic cordova plugin add cordova-sqlite-storage</li>
+  <li>npm install –save @ionic-native/sqlite</li>
+</ol>
+
+<h2 id="preparar-aplicativo">Preparar aplicativo:</h2>
+
+<p>No <code class="highlighter-rouge">app.module.ts</code> coloque estes import’s:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">NgModule</span><span class="p">,</span> <span class="nx">ErrorHandler</span><span class="p">,</span> <span class="nx">LOCALE_ID</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">HttpModule</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/http'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">SQLite</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@ionic-native/sqlite'</span><span class="p">;</span>
+<span class="k">import</span> <span class="s1">'rxjs/add/operator/map'</span><span class="p">;</span>
+<span class="k">import</span> <span class="s1">'rxjs/add/operator/toPromise'</span><span class="p">;</span>
+<span class="p">...</span>
+
+<span class="p">@</span><span class="nd">NgModule</span><span class="p">({</span>
+  <span class="p">...</span>
+  <span class="na">imports</span><span class="p">:</span> <span class="p">[</span>
+    <span class="nx">HttpModule</span><span class="p">,</span>
+  <span class="p">],</span>
+  <span class="p">...</span>
+  <span class="na">providers</span><span class="p">:</span> <span class="p">[</span>
+    <span class="nx">SQLite</span><span class="p">,</span>
+  <span class="p">]</span>
+ <span class="p">...</span>
+</code></pre></div></div>
+
+<h2 id="criar-componetes">Criar componetes:</h2>
+
+<p>Vamos para o <code class="highlighter-rouge">terminal</code> e criar os providers:</p>
+
+<pre><code class="language-cmd">  $ ionic g provider database
+  $ ionic g provider event
+</code></pre>
+
+<p>No <code class="highlighter-rouge">database.ts</code> vamos por este codigo para criação do Banco de dados e uma inserção para fins de teste além da função <strong>getDB()</strong> que é sempre utilizada para podermos mexer com o DB [ caso tenha alguma duvida clique <a href="http://www.fabricadecodigo.com/crud-sqlite-ionic/">aqui</a> ]:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">SQLite</span><span class="p">,</span> <span class="nx">SQLiteObject</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@ionic-native/sqlite'</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">Injectable</span><span class="p">()</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">DatabaseProvider</span> <span class="p">{</span>
+
+  <span class="kd">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">sqlite</span><span class="p">:</span> <span class="nx">SQLite</span><span class="p">)</span> <span class="p">{</span>  <span class="p">}</span>
+
+  <span class="kr">public</span> <span class="nx">getDB</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">sqlite</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+      <span class="na">name</span><span class="p">:</span> <span class="s1">'infocli.db'</span><span class="p">,</span>
+      <span class="na">location</span><span class="p">:</span> <span class="s1">'default'</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="kr">public</span> <span class="nx">createDatabase</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">getDB</span><span class="p">()</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">db</span><span class="p">:</span> <span class="nx">SQLiteObject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">createTables</span><span class="p">(</span><span class="nx">db</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">insertDefaultItems</span><span class="p">(</span><span class="nx">db</span><span class="p">);</span>
+      <span class="p">})</span>
+      <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">e</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">));</span>
+  <span class="p">}</span>
+
+  <span class="kr">private</span> <span class="nx">createTables</span><span class="p">(</span><span class="na">db</span><span class="p">:</span> <span class="nx">SQLiteObject</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Creating as tables</span>
+    <span class="nx">db</span><span class="p">.</span><span class="nx">sqlBatch</span><span class="p">([</span>
+      <span class="p">[</span><span class="s1">'CREATE TABLE IF NOT EXISTS events (id integer primary key AUTOINCREMENT NOT NULL, title TEXT, startTime TEXT, endTime TEXT, allDay integer)'</span><span class="p">],])</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Tabelas criadas'</span><span class="p">))</span>
+      <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">e</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">'Erro ao criar as tabelas'</span><span class="p">,</span> <span class="nx">e</span><span class="p">));</span>
+  <span class="p">}</span>
+
+  <span class="kr">private</span> <span class="nx">insertDefaultItems</span><span class="p">(</span><span class="na">db</span><span class="p">:</span> <span class="nx">SQLiteObject</span><span class="p">)</span> <span class="p">{</span>
+    
+    <span class="nx">db</span><span class="p">.</span><span class="nx">executeSql</span><span class="p">(</span><span class="s1">'select COUNT(id) as qtd from eventos'</span><span class="p">,</span> <span class="p">{})</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="na">data</span><span class="p">:</span> <span class="nx">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="c1">//If there is no record</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">rows</span><span class="p">.</span><span class="nx">item</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">qtd</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="c1">// insert data</span>
+        <span class="nx">db</span><span class="p">.</span><span class="nx">sqlBatch</span><span class="p">([</span>
+          <span class="p">[</span><span class="s1">'insert into events (title, startTime, endTime, allDay) values (?,?,?,?)'</span><span class="p">,</span> 
+          <span class="p">[</span> <span class="s1">'test'</span><span class="p">,</span> <span class="s1">'2018-01-07T12:00:00-02:00'</span><span class="p">,</span> <span class="s1">'2018-01-07T14:00:00-02:00'</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+        <span class="p">])</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'event data included'</span><span class="p">))</span>
+        <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">e</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">'Error adding data'</span><span class="p">,</span> <span class="nx">e</span><span class="p">));</span>
+
+      <span class="p">}</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">e</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">'Error verifying qtd of events'</span><span class="p">,</span> <span class="nx">e</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Aqui temos a funções para montar a estrutura do <code class="highlighter-rouge">db</code>, sendo colocada como private para manter a segurança e evitar mudanças desnecessarias. Todas são executadas como <em>Promise</em> para não termos problemas com o tempo de resposta do <strong>SQLite</strong> evitando qualquer erro na manipulação dos dados.</p>
+
+<p>Bom, para este banco ser criado quando o aplicativo for isntalado temos que por ele no <code class="highlighter-rouge">app.component.ts</code> chamar a função <strong>createDatabase()</strong> :</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">DatabaseProvider</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'../providers/database/database'</span><span class="p">;</span>
+<span class="p">...</span>
+
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">MyApp</span> <span class="p">{</span>
+  <span class="nl">rootPage</span><span class="p">:</span> <span class="nx">any</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">dbProvider</span><span class="p">:</span> <span class="nx">DatabaseProvider</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">platform</span><span class="p">.</span><span class="nx">ready</span><span class="p">().</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">statusBar</span><span class="p">.</span><span class="nx">styleDefault</span><span class="p">();</span>
+      <span class="nx">dbProvider</span><span class="p">.</span><span class="nx">createDatabase</span><span class="p">()</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">openHomePage</span><span class="p">(</span><span class="nx">splashScreen</span><span class="p">);</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="k">catch</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">openHomePage</span><span class="p">(</span><span class="nx">splashScreen</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="kr">private</span> <span class="nx">openHomePage</span><span class="p">(</span><span class="na">splashScreen</span><span class="p">:</span> <span class="nx">SplashScreen</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">splashScreen</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">rootPage</span> <span class="o">=</span> <span class="nx">HomePage</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Finalmente podemos agora ir ao provider <code class="highlighter-rouge">event.ts</code> e importamos o arquivo <code class="highlighter-rouge">database.ts</code>:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">DatabaseProvider</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'../database/database'</span><span class="p">;</span>
+<span class="k">import</span> <span class="s1">'rxjs/add/operator/map'</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">Injectable</span><span class="p">()</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">EventsDaoProvider</span> <span class="p">{</span>
+
+  <span class="kd">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">dbProvider</span><span class="p">:</span> <span class="nx">DatabaseProvider</span><span class="p">)</span> <span class="p">{</span>  <span class="p">}</span>
+<span class="p">...</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>Feito isso, podemos iniciar o CRUD:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">public</span> <span class="nx">insert</span><span class="p">(</span><span class="nx">ev</span><span class="p">:</span> <span class="nx">Event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">dbProvider</span><span class="p">.</span><span class="nx">getDB</span><span class="p">()</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">db</span><span class="p">:</span> <span class="nx">SQLiteObject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">sql</span> <span class="o">=</span> <span class="s1">'insert into Events (title, startTime, endTime, allDay) values (?, ?, ?, ?)'</span><span class="p">;</span>
+        <span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span><span class="nx">ev</span><span class="p">.</span><span class="nx">title</span><span class="p">,</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">startTime</span><span class="p">,</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">endTime</span><span class="p">,</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">allDay</span> <span class="p">?</span> <span class="mi">1</span> <span class="p">:</span> <span class="mi">0</span><span class="p">];</span>
+        <span class="k">return</span> <span class="nx">db</span><span class="p">.</span><span class="nx">executeSql</span><span class="p">(</span><span class="nx">sql</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="na">data</span><span class="p">:</span> <span class="nx">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="k">return</span> <span class="kc">true</span><span class="p">;})</span>
+          <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">));</span>
+      <span class="p">})</span>
+      <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">));</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>A logica a seguir é simples chamando a função <strong>getDB()</strong> podemos por dentro do <em>then</em> recebemos um <code class="highlighter-rouge">SQLiteObject</code> basicamente um objeto do SQLite onde podemos executar comando <em>sql</em> onde só precisa ser chamada a função <strong>executeSql()</strong> passando sempre duas variaveis, por convenção coloque o comando <em>sql</em> em uma variavel com este nome e os dados tambem. Você pode tratar todas as funções com esta estrutura, claramente so adaptando o retorno para sua necessidade e mudando os conteudos das variaveis.</p>
+
+  </section>
+  <section id="disqus_thread"></section><!-- /#disqus_thread -->
+</article>
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'KevinMartins367'; // required: replace example with your forum shortname
+        var disqus_config = function () {
+          this.page.url = 'http://localhost:4000/2016/CRUD-SQLite-ionic-3/';
+          this.page.identifier = '/2016/CRUD-SQLite-ionic-3';
+          this.page.title = 'CRUD SQLite no Ionic 3';
+        };
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+      </div>
+
+      <footer class="footer">
+  <span class="footer__copyright">&copy; 2018 Kevin Martins. Todos os direitos reservados.</span>
+</footer> 
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+    </div>
+    <!-- Go to www.addthis.com/dashboard to customize your tools --> 
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59cd26ff028f56b6">
+    </script>
+  </body>
+</html>

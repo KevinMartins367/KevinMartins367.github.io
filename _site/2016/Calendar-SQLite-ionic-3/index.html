@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="Kevin Martins">
+  <title>Calendario com SQLite no Ionic 3</title>
+  <meta name="description" content="">
+ 
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Kevin Martins">
+  <meta name="twitter:description" content="">
+
+  <meta property="og:type" content="blog">
+  <meta property="og:image:width" content="800"/>
+  <meta property="og:image:height" content="800"/>
+  <meta property="og:title" content="Calendario com SQLite no Ionic 3"/>
+  <meta property="og:description" content=""/>
+  <meta property="og:url" content="http://localhost:4000/2016/Calendar-SQLite-ionic-3/"/>
+  <meta property="og:site_name" content="Calendario com SQLite no Ionic 3"/>
+
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/images/favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000//2016/Calendar-SQLite-ionic-3/">
+  <link rel="alternate" type="application/rss+xml" title="Kevin Martins" href="/feed.xml">
+</head>
+
+
+  <body>
+    <span class="mobile btn-mobile-menu">
+  <i class="icon icon-list btn-mobile-menu__icon"></i>
+  <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+</span>
+  
+<header class="panel-cover" style="background-image: url(/images/cover.jpg)">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <a href="/" title="link to home of Kevin Martins">
+          <img src="/images/profile.jpg" class="user-image" alt="My Profile Photo">
+          <h1 class="panel-cover__title panel-title">Kevin Martins</h1>
+        </a>
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">Web & Mobile App Developer</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="link to Kevin Martins blog" class="blog-button">Blog</a></li>
+            </ul>
+          </nav>
+
+          <nav class="cover-navigation navigation--social">
+            <ul class="navigation">
+          
+            
+
+            
+              <!-- Facebook -->
+              <li class="navigation__item">
+                <a href="http://fb.me/KevinMartins367" title="KevinMartins367 on Facebook" target="_blank">
+                  <i class="icon icon-social-facebook"></i>
+                  <span class="label">Facebook</span>
+                </a>
+              </li>
+            
+
+            
+              <!-- LinkedIn -->
+              <li class="navigation__item">
+                <a href="https://www.linkedin.com/in/kevin-martins-010532119" title="kevin-martins-010532119 on LinkedIn" target="_blank">
+                  <i class="icon icon-social-linkedin"></i>
+                  <span class="label">LinkedIn</span>
+                </a>
+              </li>
+            
+
+            
+              <!-- GitHub -->
+              <li class="navigation__item">
+                <a href="https://www.github.com/KevinMartins367" title="KevinMartins367 on GitHub" target="_blank">
+                  <i class="icon icon-social-github"></i>
+                  <span class="label">GitHub</span>
+                </a>
+              </li>
+            
+
+            
+              <!-- Email -->
+              <li class="navigation__item">
+                <a href="mailto:kevincosta13679@outlook.com" title="Email kevincosta13679@outlook.com" target="_blank">
+                  <i class="icon icon-mail"></i>
+                  <span class="label">Email</span>
+                </a>
+              </li>
+                      
+            </ul>
+          </nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+      <div class="content-wrapper__inner">
+        <article class="post-container post-container--single">
+  <header class="post-header">
+    
+    <div class="post-meta">
+      <time datetime="21 Feb 2016" class="post-meta__date date">21 Feb 2016</time> &#8226; <span class="post-meta__tags">on <a href="/tags/#ionic 3">ionic 3</a> <a href="/tags/#sqlite">sqlite</a> <a href="/tags/#directive">directive</a> </span>
+    </div>
+    <h1 class="post-title">Calendario com SQLite no Ionic 3</h1>
+  </header>
+
+  <section class="post">
+    <p>Neste post, iremos implementar algumas funções basicas do SQLite no ionic 3 utilizando um directive de calendario.</p>
+
+<p><strong>Índice</strong></p>
+
+<ol>
+  <li><a href="#id1">Instalações necessitarias</a></li>
+  <li><a href="#id2">Preparar aplicativo</a></li>
+  <li><a href="#id3">Criar componetes:</a></li>
+  <li><a href="#id4">Metodos:</a>
+    <ul>
+      <li><a href="#id5">Get()</a></li>
+      <li><a href="#id6">List()</a></li>
+      <li><a href="#id7">Create()</a></li>
+      <li><a href="#id8">Delete()</a></li>
+      <li><a href="#id9">Edit()</a></li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="demo"><a href="http://KevinMartins367.github.io/Calendar-Sqlite-Ionic-3/demo/">DEMO</a></h3>
+
+<h2 id="-instalações-necessitarias-"><a name="id1"> Instalações necessitarias: </a></h2>
+
+<ol>
+  <li>npm install ionic2-calendar –save [ para mais informações clique <a href="https://www.npmjs.com/package/ionic2-calendar">aqui</a> ]</li>
+  <li>npm install moment –save  [ para mais informações clique <a href="https://momentjs.com/">aqui</a> ]</li>
+  <li>npm install intl@1.2.5 –save</li>
+</ol>
+
+<h2 id="-preparar-aplicativo-"><a name="id2"> Preparar aplicativo: </a></h2>
+
+<p>No <code class="highlighter-rouge">app.module.ts</code> coloque estes import’s:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">NgModule</span><span class="p">,</span> <span class="nx">ErrorHandler</span><span class="p">,</span> <span class="nx">LOCALE_ID</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">HttpModule</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/http'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">NgCalendarModule</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'ionic2-calendar'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">SQLite</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@ionic-native/sqlite'</span><span class="p">;</span>
+<span class="k">import</span> <span class="s1">'rxjs/add/operator/map'</span><span class="p">;</span>
+<span class="k">import</span> <span class="s1">'rxjs/add/operator/toPromise'</span><span class="p">;</span>
+<span class="p">...</span>
+
+<span class="p">@</span><span class="nd">NgModule</span><span class="p">({</span>
+  <span class="p">...</span>
+  <span class="na">imports</span><span class="p">:</span> <span class="p">[</span>
+    <span class="nx">HttpModule</span><span class="p">,</span>
+    <span class="nx">NgCalendarModule</span><span class="p">,</span>
+  <span class="p">],</span>
+  <span class="p">...</span>
+  <span class="na">providers</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span><span class="na">provide</span><span class="p">:</span> <span class="nx">ErrorHandler</span><span class="p">,</span> <span class="na">useClass</span><span class="p">:</span> <span class="nx">IonicErrorHandler</span><span class="p">},</span>
+    <span class="p">{</span> <span class="na">provide</span><span class="p">:</span> <span class="nx">LOCALE_ID</span><span class="p">,</span> <span class="na">useValue</span><span class="p">:</span> <span class="s1">'pt-Br'</span> <span class="p">},</span>  
+    <span class="nx">SQLite</span><span class="p">,</span>
+  <span class="p">]</span>
+ <span class="p">...</span>
+</code></pre></div></div>
+
+<p>OBS: Caso os nomes dos meses não sejam traduzidos para sua ligua sugiro por dentro dos imports do <code class="highlighter-rouge">@NgModule</code> um array com os nomes como abaixo</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nx">IonicModule</span><span class="p">.</span><span class="nx">forRoot</span><span class="p">(</span><span class="nx">MyApp</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">monthNames</span><span class="p">:</span> <span class="p">[</span><span class="s1">'janeiro'</span><span class="p">,</span> <span class="s1">'fevereiro'</span><span class="p">,</span> <span class="s1">'mar</span><span class="err">\</span><span class="s1">u00e7o'</span><span class="p">,</span> <span class="p">...</span> <span class="p">],</span>
+        <span class="na">monthShortNames</span><span class="p">:</span> <span class="p">[</span><span class="s1">'jan'</span><span class="p">,</span> <span class="s1">'fev'</span><span class="p">,</span> <span class="s1">'mar'</span><span class="p">,</span> <span class="p">...</span> <span class="p">],</span>
+        <span class="na">dayNames</span><span class="p">:</span> <span class="p">[</span><span class="s1">'domingo'</span><span class="p">,</span> <span class="s1">'segunda-feira'</span><span class="p">,</span> <span class="s1">'ter</span><span class="err">\</span><span class="s1">u00e7a-feira'</span><span class="p">,</span> <span class="p">...</span> <span class="p">],</span>
+        <span class="na">dayShortNames</span><span class="p">:</span> <span class="p">[</span><span class="s1">'dom'</span><span class="p">,</span> <span class="s1">'seg'</span><span class="p">,</span> <span class="s1">'ter'</span><span class="p">,</span> <span class="p">...</span> <span class="p">],</span>
+    <span class="p">})</span>
+</code></pre></div></div>
+
+<p>Avalie qual pode se encaixar melhor no seu projeto!</p>
+
+<h2 id="-criar-componetes-"><a name="id3"> Criar componetes: </a></h2>
+
+<p>Vamos para o <code class="highlighter-rouge">terminal</code> e criar as telas e os providers:</p>
+
+<pre><code class="language-cmd">  $ ionic g page Calendar  &lt;!-- escolha o nome da sua preferencia --&gt;
+  $ ionic g page event-modal  &lt;!-- escolha o nome da sua preferencia --&gt;
+  $ ionic g provider database
+  $ ionic g provider event
+</code></pre>
+<p>Pegue o exemplo de CRUD neste post <a href="http://KevinMartins367.github.io/2018/CRUD-SQLite-ionic-3/">aqui</a></p>
+
+<h2 id="-metodos-"><a name="id4"> Metodos: </a></h2>
+
+<p>Agora com um CRUD ja feito podemos chamar cada função nas nossas telas primeiramente vamos para a <strong>calendar</strong> (ou o nome que você preferiu), primeiro item que vamos mexer é colocar o <em>calendar</em> para funcionar sendo assim vamos no <code class="highlighter-rouge">.html</code> e colocamos a tag:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;calendar</span> <span class="err">[</span><span class="na">eventSource</span><span class="err">]="</span><span class="na">eventSource</span><span class="err">"</span>
+            <span class="err">[</span><span class="na">noEventsLabel</span><span class="err">]="</span><span class="na">noEventsLabel</span><span class="err">"</span>
+            <span class="err">[</span><span class="na">calendarMode</span><span class="err">]="</span><span class="na">calendar</span><span class="err">.</span><span class="na">mode</span><span class="err">"</span>
+            <span class="err">[</span><span class="na">currentDate</span><span class="err">]="</span><span class="na">calendar</span><span class="err">.</span><span class="na">currentDate</span><span class="err">"</span>
+            <span class="err">[</span><span class="na">locale</span><span class="err">]="</span><span class="na">calendar</span><span class="err">.</span><span class="na">locale</span><span class="err">"</span>
+            <span class="err">[</span><span class="na">monthviewEventDetailTemplate</span><span class="err">]="</span><span class="na">template</span><span class="err">"</span>
+            <span class="err">(</span><span class="na">onEventSelected</span><span class="err">)="</span><span class="na">onEventSelected</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span>
+            <span class="err">(</span><span class="na">onTitleChanged</span><span class="err">)="</span><span class="na">onViewTitleChanged</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span>
+            <span class="err">(</span><span class="na">onTimeSelected</span><span class="err">)="</span><span class="na">onTimeSelected</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span>
+            <span class="na">step=</span><span class="s">"30"</span>
+            <span class="na">class=</span><span class="s">"calendar"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/calendar&gt;</span>
+</code></pre></div></div>
+
+<p>Agora no <code class="highlighter-rouge">.ts</code> podemos por os eventos e variaveis necessarias:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">IonicPage</span><span class="p">,</span> <span class="nx">NavController</span><span class="p">,</span> <span class="nx">NavParams</span><span class="p">,</span> <span class="nx">ModalController</span><span class="p">,</span> <span class="nx">AlertController</span>  <span class="p">}</span> <span class="k">from</span> <span class="s1">'ionic-angular'</span><span class="p">;</span>
+<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">moment</span> <span class="k">from</span> <span class="s1">'moment'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">EventProvider</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'../../providers/event/event'</span><span class="p">;]</span>
+<span class="p">...</span>
+
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">CalendarPage</span> <span class="p">{</span>
+
+  <span class="nx">eventSource</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="nl">viewTitle</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">noEventsLabel</span><span class="p">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="s2">"Não há eventos listados"</span><span class="p">;</span>
+  <span class="nx">selectedDay</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+  <span class="nx">calendar</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">mode</span><span class="p">:</span> <span class="s1">'month'</span><span class="p">,</span>
+    <span class="na">locale</span><span class="p">:</span> <span class="s1">'pt-br'</span><span class="p">,</span>
+    <span class="na">currentDate</span><span class="p">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span>
+  <span class="p">};</span>
+
+  <span class="kd">constructor</span><span class="p">(</span><span class="kr">public</span> <span class="nx">navCtrl</span><span class="p">:</span> <span class="nx">NavController</span><span class="p">,</span> <span class="kr">public</span> <span class="nx">navParams</span><span class="p">:</span> <span class="nx">NavParams</span><span class="p">,</span> <span class="kr">private</span> <span class="nx">modalCtrl</span><span class="p">:</span> <span class="nx">ModalController</span><span class="p">,</span> <span class="kr">private</span> <span class="nx">alertCtrl</span><span class="p">:</span> <span class="nx">AlertController</span><span class="p">,</span> 
+    <span class="kr">public</span> <span class="nx">ep</span><span class="p">:</span> <span class="nx">EventProvider</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">moment</span><span class="p">.</span><span class="nx">locale</span><span class="p">(</span><span class="s1">'pt-br'</span><span class="p">);</span>   
+    <span class="k">this</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="get"><a name="id5">Get()</a></h3>
+
+<p>Dentro do constructor chamamos a função do <code class="highlighter-rouge">moment</code> locale para termos ele trabalhando no idioma em que estamos, mude ele para a sua necessidade. E tambem estamos iniciando a função <strong>get()</strong> que vamos criar agora:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">get</span><span class="p">(){</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">ep</span><span class="p">.</span><span class="nx">getAll</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">e</span><span class="p">:</span> <span class="nx">any</span><span class="p">[])</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">let</span> <span class="nx">ev</span> <span class="o">=</span> <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="nx">e</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">id</span><span class="p">,</span> <span class="na">title</span><span class="p">:</span><span class="nx">e</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">title</span><span class="p">,</span> <span class="na">startTime</span><span class="p">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">e</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">startTime</span><span class="p">),</span> <span class="na">endTime</span><span class="p">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">e</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">endTime</span><span class="p">),</span> <span class="na">allDay</span><span class="p">:</span> <span class="nx">e</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">allDay</span><span class="p">,</span> <span class="na">notification</span><span class="p">:</span> <span class="nx">e</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">notification</span> <span class="p">,</span> <span class="na">subText</span><span class="p">:</span> <span class="kc">null</span> <span class="p">};</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">eventSource</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">ev</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">eventSource</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">);});</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Ela chama a promise <strong>getAll()</strong> do provider <code class="highlighter-rouge">event.ts</code> e manipulamos o objeto retornado <strong>e</strong> onde temos um <code class="highlighter-rouge">for</code> que corre todos os conteudo de nosso objeto, colocando cada item na variavel local <strong>ev</strong> e por fim dando um <strong>push</strong> no nosso array global <strong>eventSource</strong> ao termino do <code class="highlighter-rouge">for</code> coloquei o <em>console.log()</em> so para termos certeza de como esta nosso array e ao fim do <em>then</em> temos nosso tratamento de erros, o <em>catch</em>.</p>
+
+<h3 id="list-"><a name="id6">List() </a></h3>
+
+<p>Antes do <em>catch</em> temos outra função sendo chamada a <strong>list()</strong> sendo incluida com o valor <em>null</em> vou demostrar agora o porque:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+  <span class="nx">list</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+    
+    <span class="kd">let</span> <span class="nx">eventData</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">events</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">eventSource</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">data</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">){</span>
+      <span class="nx">eventData</span><span class="p">.</span><span class="nx">startTime</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">startTime</span><span class="p">);</span>
+      <span class="nx">eventData</span><span class="p">.</span><span class="nx">endTime</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">endTime</span><span class="p">);</span>
+      <span class="nx">events</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">eventData</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">events</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+
+      <span class="kd">let</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">events</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+     
+      <span class="k">if</span><span class="p">(</span><span class="nx">moment</span><span class="p">(</span><span class="nx">element</span><span class="p">.</span><span class="nx">startTime</span><span class="p">).</span><span class="nx">format</span><span class="p">(</span><span class="s1">'L'</span><span class="p">)</span> <span class="o">==</span> <span class="nx">moment</span><span class="p">(</span><span class="nx">element</span><span class="p">.</span><span class="nx">endTime</span><span class="p">).</span><span class="nx">format</span><span class="p">(</span><span class="s1">'L'</span><span class="p">)){</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">element</span><span class="p">.</span><span class="nx">allDay</span> <span class="o">==</span> <span class="kc">true</span><span class="p">){</span>
+          <span class="nx">element</span><span class="p">.</span><span class="nx">subText</span> <span class="o">=</span> <span class="s1">'O dia todo'</span><span class="p">;</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+          <span class="nx">element</span><span class="p">.</span><span class="nx">subText</span> <span class="o">=</span> <span class="nx">moment</span><span class="p">(</span><span class="nx">element</span><span class="p">.</span><span class="nx">startTime</span><span class="p">).</span><span class="nx">format</span><span class="p">(</span><span class="s1">'LTS'</span><span class="p">);</span>
+        <span class="p">}</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">moment</span><span class="p">(</span><span class="nx">element</span><span class="p">.</span><span class="nx">endTime</span><span class="p">).</span><span class="nx">format</span><span class="p">(</span><span class="s1">'DD'</span><span class="p">))</span> <span class="o">&gt;</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">moment</span><span class="p">(</span><span class="nx">element</span><span class="p">.</span><span class="nx">startTime</span><span class="p">).</span><span class="nx">format</span><span class="p">(</span><span class="s1">'DD'</span><span class="p">))){</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="nx">element</span><span class="p">.</span><span class="nx">allDay</span> <span class="o">==</span> <span class="kc">true</span><span class="p">){</span>
+          <span class="nx">element</span><span class="p">.</span><span class="nx">subText</span> <span class="o">=</span> <span class="s2">"O dia todo    "</span> <span class="o">+</span> <span class="nx">moment</span><span class="p">(</span><span class="nx">element</span><span class="p">.</span><span class="nx">startTime</span><span class="p">).</span><span class="nx">format</span><span class="p">(</span><span class="s1">'L'</span><span class="p">)</span> <span class="o">+</span><span class="s2">" || "</span> <span class="o">+</span> <span class="nx">moment</span><span class="p">(</span><span class="nx">element</span><span class="p">.</span><span class="nx">endTime</span><span class="p">).</span><span class="nx">format</span><span class="p">(</span><span class="s1">'L'</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+          <span class="nx">element</span><span class="p">.</span><span class="nx">subText</span> <span class="o">=</span> <span class="nx">moment</span><span class="p">(</span><span class="nx">element</span><span class="p">.</span><span class="nx">startTime</span><span class="p">).</span><span class="nx">format</span><span class="p">(</span><span class="s1">'L'</span><span class="p">)</span> <span class="o">+</span><span class="s1">' || '</span> <span class="o">+</span> <span class="nx">moment</span><span class="p">(</span><span class="nx">element</span><span class="p">.</span><span class="nx">endTime</span><span class="p">).</span><span class="nx">format</span><span class="p">(</span><span class="s1">'L'</span><span class="p">);</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">eventSource</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">eventSource</span> <span class="o">=</span> <span class="nx">events</span><span class="p">;</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Esta função é para listar os eventos de cada dia dando uma infomação rapida sobre o mesmo que é o item <em>subText</em>. Caso, a variavel <code class="highlighter-rouge">data</code> venha como <em>null</em> significa que ja temos um <em>subText</em> para todos os eventos listados tornado a checagem pelo <code class="highlighter-rouge">for</code> desnecessaria (esta logica foi usada para evitar lentidão no app e possiveis erros)</p>
+
+<p>Voltamos ao <code class="highlighter-rouge">.html</code> e vamos adicionar os componentes para esta função fazer sentido:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ng-template</span> <span class="err">#</span><span class="na">template</span> <span class="na">let-selectedDate=</span><span class="s">"selectedDate.events"</span> <span class="na">let-noEventsLabel=</span><span class="s">"noEventsLabel"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ion-list</span> <span class="err">*</span><span class="na">ngIf=</span><span class="s">"selectedDate.length &gt; 0"</span> <span class="na">no-lines</span> <span class="na">class=</span><span class="s">"event-list"</span> <span class="na">padding</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;ion-list</span> <span class="err">*</span><span class="na">ngFor=</span><span class="s">"let event of selectedDate"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ion-item-sliding&gt;</span>
+          <span class="nt">&lt;ion-item</span> <span class="na">ion-item</span> <span class="na">detail-push</span> <span class="err">(</span><span class="na">click</span><span class="err">)="</span><span class="na">onEventSelected</span><span class="err">(</span><span class="na">event</span><span class="err">)"</span> <span class="na">class=</span><span class="s">"event-button"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;ion-icon</span> <span class="na">name=</span><span class="s">"calendar"</span> <span class="na">item-start</span><span class="nt">&gt;&lt;/ion-icon&gt;</span>
+            <span class="nt">&lt;h1&gt;&lt;/h1&gt;</span>
+            <span class="nt">&lt;p&gt;</span> <span class="nt">&lt;/p&gt;</span>
+          <span class="nt">&lt;/ion-item&gt;</span>
+          <span class="nt">&lt;ion-item-options</span> <span class="na">side=</span><span class="s">"right"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">ion-button</span> <span class="na">color=</span><span class="s">"btnee"</span> <span class="err">(</span><span class="na">click</span><span class="err">)="</span><span class="na">delete</span><span class="err">(</span><span class="na">event</span><span class="err">)"</span><span class="nt">&gt;</span>
+              delete
+            <span class="nt">&lt;/button&gt;</span>
+          <span class="nt">&lt;/ion-item-options&gt;</span>
+          <span class="nt">&lt;ion-item-options</span> <span class="na">side=</span><span class="s">"left"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">ion-button</span> <span class="na">color=</span><span class="s">"btnee"</span> <span class="err">(</span><span class="na">click</span><span class="err">)="</span><span class="na">edit</span><span class="err">(</span><span class="na">event</span><span class="err">)"</span><span class="nt">&gt;</span>
+              edit
+            <span class="nt">&lt;/button&gt;</span>
+          <span class="nt">&lt;/ion-item-options&gt;</span>
+        <span class="nt">&lt;/ion-item-sliding&gt;</span>
+      <span class="nt">&lt;/ion-list&gt;</span>
+    <span class="nt">&lt;/ion-list&gt;</span>
+    <span class="nt">&lt;ion-title</span> <span class="err">*</span><span class="na">ngIf=</span><span class="s">"selectedDate.length == 0"</span><span class="nt">&gt;&lt;br&gt;&lt;/ion-title&gt;</span>
+  <span class="nt">&lt;/ng-template&gt;</span>
+</code></pre></div></div>
+
+<p>Temos um <em>ion-list</em> com um <code class="highlighter-rouge">if</code> da variavel <strong>selectedDate</strong> que é uma variavel do proprio <strong>calendar</strong>, por isso ela ainda não tinha sido mencionada, ela se comunica com o array <strong>eventSource</strong> setados na função <strong>get()</strong>  o que torna possivel validarmos a existencia com um <strong>&gt; 0</strong>  assim criando outro <em>ion-list</em> para exibirmos os itens separados pela <strong>list()</strong> mostrando o <em>title</em> e o <em>subText</em> de cada evento cada um com dois <em>button</em>, um para <strong>delete()</strong> e outro para <strong>edit()</strong> (ambas funções que seram mostradas no proximo passos), e caso não tenha nenhum evento listado para o dia selecionado é mostrado o conteudo da variavel <strong>noEventsLabel</strong>. Isso tudo só é possivel sendo colocado dentro da tag <em>ng-template</em> caso contrario ocorrerá erro na execução.</p>
+
+<h3 id="-create-"><a name="id7"> Create() </a></h3>
+
+<p>Antes disso vamos ver a tela onde podemos criar novos eventos:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">addEvent</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">modal</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">modalCtrl</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">'EventModalPage'</span><span class="p">,</span> <span class="p">{</span><span class="na">selectedDay</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">selectedDay</span><span class="p">});</span>
+    <span class="nx">modal</span><span class="p">.</span><span class="nx">present</span><span class="p">();</span>
+    <span class="nx">modal</span><span class="p">.</span><span class="nx">onDidDismiss</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">ep</span><span class="p">.</span><span class="nx">insert</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="na">res</span><span class="p">:</span> <span class="nx">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">);});</span>
+      <span class="p">}</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Para criação temos que chamar a promise <strong>insert()</strong> do provider <code class="highlighter-rouge">event.ts</code> que recebe o valor de <code class="highlighter-rouge">data</code> onde temos a sulução do <em>then</em> que chama a outra função <strong>list()</strong> passando o <code class="highlighter-rouge">data</code> novamente e temos nosso tratamento de erros, o <em>catch</em>. Mas antes disso temos que explicar de onde vem o objeto <code class="highlighter-rouge">data</code>, ele é criado na <em>page</em> event-modal que chamamos pelo <strong>modalCtrl</strong> (caso, tenha algum problema em fazer esta chamada apague o import do event-modal no <code class="highlighter-rouge">app.component.ts</code>). E vamos por o codigo nesta <em>page</em> no <code class="highlighter-rouge">.html</code>:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ion-header&gt;</span>
+  <span class="nt">&lt;ion-navbar&gt;</span>
+    <span class="nt">&lt;ion-buttons</span> <span class="na">end</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">ion-button</span> <span class="na">icon-only</span> <span class="err">(</span><span class="na">click</span><span class="err">)="</span><span class="na">cancel</span><span class="err">()"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ion-icon</span> <span class="na">name=</span><span class="s">"close"</span><span class="nt">&gt;&lt;/ion-icon&gt;</span>
+      <span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;/ion-buttons&gt;</span>
+    <span class="nt">&lt;ion-title&gt;</span>Adicionar Evento<span class="nt">&lt;/ion-title&gt;</span>
+  <span class="nt">&lt;/ion-navbar&gt;</span>
+<span class="nt">&lt;/ion-header&gt;</span>
+ 
+<span class="nt">&lt;ion-content&gt;</span>
+  <span class="nt">&lt;ion-list&gt;</span>
+    <span class="nt">&lt;ion-item&gt;</span>
+      <span class="nt">&lt;ion-input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"Titulo"</span> <span class="err">[(</span><span class="na">ngModel</span><span class="err">)]="</span><span class="na">event</span><span class="err">.</span><span class="na">title</span><span class="err">"</span><span class="nt">&gt;&lt;/ion-input&gt;</span>
+    <span class="nt">&lt;/ion-item&gt;</span>
+ 
+    <span class="nt">&lt;ion-item&gt;</span>
+      <span class="nt">&lt;ion-label&gt;</span>Inicio<span class="nt">&lt;/ion-label&gt;</span>
+      <span class="nt">&lt;ion-datetime</span> <span class="na">color=</span><span class="s">"bordas"</span> <span class="na">displayFormat=</span><span class="s">"DD/MM/YYYY HH:mm"</span> <span class="na">pickerFormat=</span><span class="s">"MMM D:HH:mm"</span> <span class="err">[(</span><span class="na">ngModel</span><span class="err">)]="</span><span class="na">event</span><span class="err">.</span><span class="na">startTime</span><span class="err">"</span> <span class="err">[</span><span class="na">min</span><span class="err">]="</span><span class="na">minDate</span><span class="err">"</span>
+      <span class="na">cancelText=</span><span class="s">"Cancelar"</span>
+      <span class="na">doneText=</span><span class="s">"Concluir"</span><span class="nt">&gt;&lt;/ion-datetime&gt;</span>
+    <span class="nt">&lt;/ion-item&gt;</span>
+ 
+    <span class="nt">&lt;ion-item&gt;</span>
+      <span class="nt">&lt;ion-label&gt;</span>Fim<span class="nt">&lt;/ion-label&gt;</span>
+      <span class="nt">&lt;ion-datetime</span> <span class="na">color=</span><span class="s">"bordas"</span> <span class="na">displayFormat=</span><span class="s">"DD/MM/YYYY HH:mm"</span> <span class="na">pickerFormat=</span><span class="s">"MMM D:HH:mm"</span> <span class="err">[(</span><span class="na">ngModel</span><span class="err">)]="</span><span class="na">event</span><span class="err">.</span><span class="na">endTime</span><span class="err">"</span> <span class="err">[</span><span class="na">min</span><span class="err">]="</span><span class="na">event</span><span class="err">.</span><span class="na">startTime</span><span class="err">"</span>
+      <span class="na">cancelText=</span><span class="s">"Cancelar"</span>
+      <span class="na">doneText=</span><span class="s">"Concluir"</span><span class="nt">&gt;&lt;/ion-datetime&gt;</span>
+    <span class="nt">&lt;/ion-item&gt;</span>
+ 
+    <span class="nt">&lt;ion-item&gt;</span>
+      <span class="nt">&lt;ion-label&gt;</span>alarme<span class="nt">&lt;/ion-label&gt;</span>
+      <span class="nt">&lt;ion-datetime</span> <span class="na">displayFormat=</span><span class="s">"HH:mm"</span> <span class="na">pickerFormat=</span><span class="s">"HH:mm"</span> <span class="na">hourValues=</span><span class="s">"0,1,2"</span> <span class="na">minuteValues=</span><span class="s">"0,1,15,30,45"</span> <span class="err">[(</span><span class="na">ngModel</span><span class="err">)]="</span><span class="na">event</span><span class="err">.</span><span class="na">notification</span><span class="err">"</span>
+      <span class="na">cancelText=</span><span class="s">"Cancelar"</span>   
+      <span class="na">doneText=</span><span class="s">"Concluir"</span> 
+      <span class="nt">&gt;&lt;/ion-datetime&gt;</span>
+    <span class="nt">&lt;/ion-item&gt;</span>
+    
+    <span class="nt">&lt;ion-item&gt;</span>
+      <span class="nt">&lt;ion-label&gt;</span>Dia inteiro?<span class="nt">&lt;/ion-label&gt;</span>
+      <span class="nt">&lt;ion-checkbox</span> <span class="err">[(</span><span class="na">ngModel</span><span class="err">)]="</span><span class="na">event</span><span class="err">.</span><span class="na">allDay</span><span class="err">"</span><span class="nt">&gt;&lt;/ion-checkbox&gt;</span>
+    <span class="nt">&lt;/ion-item&gt;</span>
+  <span class="nt">&lt;/ion-list&gt;</span>
+ 
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">ion-button</span> <span class="na">block</span> <span class="na">round</span> <span class="err">(</span><span class="na">click</span><span class="err">)="</span><span class="na">save</span><span class="err">()"</span><span class="nt">&gt;</span>
+      Concluir
+    <span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  
+<span class="nt">&lt;/ion-content&gt;</span>
+</code></pre></div></div>
+
+<p>Neste arquivo usamos a tag <em>ion-datetime</em>, caso não esteja familiarizado com este componente vá na <a href="https://ionicframework.com/docs/api/components/datetime/DateTime/">documentação</a> do ionic. Nesta tela criamos um Objeto event que será o retorno para <code class="highlighter-rouge">data</code> fo <code class="highlighter-rouge">.ts</code> do <strong>calendar</strong> onde vamos manipular ele para enviar pro provider.</p>
+
+<p>Mas neste momento temos que colocar algumas coisas no <code class="highlighter-rouge">.ts</code> deste modal:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">IonicPage</span><span class="p">,</span> <span class="nx">NavController</span><span class="p">,</span> <span class="nx">NavParams</span><span class="p">,</span> <span class="nx">ViewController</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'ionic-angular'</span><span class="p">;</span>
+<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">moment</span> <span class="k">from</span> <span class="s1">'moment'</span><span class="p">;</span>
+<span class="p">...</span>
+
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">EventModalPage</span> <span class="p">{</span>
+
+  <span class="nx">event</span> <span class="o">=</span> <span class="p">{</span> <span class="na">id</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span> <span class="na">title</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span> <span class="na">startTime</span><span class="p">:</span> <span class="nx">moment</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">format</span><span class="p">(),</span> <span class="na">endTime</span><span class="p">:</span> <span class="nx">moment</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">format</span><span class="p">(),</span> <span class="na">allDay</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="na">notification</span><span class="p">:</span> <span class="s2">"00:00"</span><span class="p">,</span> <span class="na">subText</span><span class="p">:</span> <span class="kc">null</span> <span class="p">};</span>
+  <span class="nx">minDate</span> <span class="o">=</span> <span class="nx">moment</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">format</span><span class="p">();</span>
+
+  <span class="kd">constructor</span><span class="p">(</span><span class="kr">public</span> <span class="nx">navCtrl</span><span class="p">:</span> <span class="nx">NavController</span><span class="p">,</span> <span class="kr">public</span> <span class="nx">navParams</span><span class="p">:</span> <span class="nx">NavParams</span><span class="p">,</span> <span class="kr">public</span> <span class="nx">viewCtrl</span><span class="p">:</span> <span class="nx">ViewController</span><span class="p">)</span> <span class="p">{</span>
+    
+    <span class="nx">moment</span><span class="p">.</span><span class="nx">locale</span><span class="p">(</span><span class="s1">'pt-br'</span><span class="p">);</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">navParams</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'ev'</span><span class="p">)){</span>
+      <span class="kd">let</span> <span class="nx">ev</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">navParams</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'ev'</span><span class="p">);</span>
+      
+      <span class="k">this</span><span class="p">.</span><span class="nx">event</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">event</span><span class="p">.</span><span class="nx">allDay</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">allDay</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">event</span><span class="p">.</span><span class="nx">endTime</span> <span class="o">=</span> <span class="nx">moment</span><span class="p">(</span><span class="nx">ev</span><span class="p">.</span><span class="nx">endTime</span><span class="p">).</span><span class="nx">format</span><span class="p">();</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">event</span><span class="p">.</span><span class="nx">startTime</span> <span class="o">=</span> <span class="nx">moment</span><span class="p">(</span><span class="nx">ev</span><span class="p">.</span><span class="nx">startTime</span><span class="p">).</span><span class="nx">format</span><span class="p">();</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">event</span><span class="p">.</span><span class="nx">subText</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">subText</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">event</span><span class="p">.</span><span class="nx">notification</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">notification</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">event</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="nx">ev</span><span class="p">.</span><span class="nx">title</span><span class="p">;</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+      <span class="kd">let</span> <span class="nx">preselectedDate</span> <span class="o">=</span> <span class="nx">moment</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">format</span><span class="p">();</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">event</span><span class="p">.</span><span class="nx">startTime</span> <span class="o">=</span> <span class="nx">preselectedDate</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">event</span><span class="p">.</span><span class="nx">endTime</span> <span class="o">=</span> <span class="nx">preselectedDate</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+  <span class="p">}</span>
+
+  <span class="nx">cancel</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">viewCtrl</span><span class="p">.</span><span class="nx">dismiss</span><span class="p">();</span>
+  <span class="p">}</span>
+ 
+  <span class="nx">save</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">viewCtrl</span><span class="p">.</span><span class="nx">dismiss</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">event</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Aqui montamos o Objeto event que usamos no <code class="highlighter-rouge">.html</code> anterior e temos um <code class="highlighter-rouge">if</code> que fará sentido nas funções de <strong>delete()</strong> e <strong>edit()</strong> por ja termos um objeto ja definido agora vamos para a proxima função.</p>
+
+<h3 id="-delete-"><a name="id8"> Delete(): </a></h3>
+
+<p>Neste função temos que receber duas variaveis um Objeto <code class="highlighter-rouge">ev</code> e uma booleana que por padrão vem como <em>false</em>:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">delete</span><span class="p">(</span><span class="nx">ev</span><span class="p">,</span> <span class="nx">act</span><span class="p">:</span> <span class="kr">boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="p">){</span>
+    
+    <span class="kd">var</span> <span class="nx">idx</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">eventSource</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">ev</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">idx</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">eventSource</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">idx</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> 
+    <span class="p">}</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">act</span> <span class="o">==</span> <span class="kc">false</span><span class="p">){</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">ep</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nx">ev</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">:</span> <span class="nx">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+      <span class="p">})</span>
+      <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">);});</span>
+    <span class="p">}</span> 
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Primeiro verificamos a quantia de itens no <strong>eventSource</strong>, para depois usarmos o metodo splice do <code class="highlighter-rouge">array</code> para remover o item selecionado. Chamamos a promise <strong>remove()</strong> onde enviamos unicamente o id para ser resolvida. Alem de passarmos o valor <code class="highlighter-rouge">null</code> para função <strong>list()</strong>.</p>
+
+<h3 id="-edit-"><a name="id9"> Edit(): </a></h3>
+
+<p>Para esta so necessita enviar o objeto de <code class="highlighter-rouge">event</code></p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">edit</span><span class="p">(</span><span class="nx">ev</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">modal</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">modalCtrl</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">'EventModalPage'</span><span class="p">,</span> <span class="p">{</span><span class="na">ev</span><span class="p">:</span> <span class="nx">ev</span><span class="p">});</span>
+    <span class="nx">modal</span><span class="p">.</span><span class="nx">present</span><span class="p">();</span>
+    <span class="nx">modal</span><span class="p">.</span><span class="nx">onDidDismiss</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      
+      <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">ep</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="na">res</span><span class="p">:</span> <span class="nx">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">ev</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">);});</span>
+      <span class="p">}</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Nesta função chamamos novamente o modal para podermos manipular os dados do <em>event</em> direto para o outro. Retomando o <code class="highlighter-rouge">if</code> como estamos enviando <em>event</em> como <em>ev</em> ele recebe um dado e igualamos ao <em>event</em> do modal. E executanto a promise <strong>update()</strong> para alterar tudo tambem chamamos a funções de <strong>delete()</strong> e <strong>list()</strong>.</p>
+
+<p>Na <strong>delete()</strong> removemos o item do array selecionado do <strong>eventSource</strong> e no <strong>list()</strong> inserimos o item com os dados atualizados.</p>
+
+  </section>
+  <section id="disqus_thread"></section><!-- /#disqus_thread -->
+</article>
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'KevinMartins367'; // required: replace example with your forum shortname
+        var disqus_config = function () {
+          this.page.url = 'http://localhost:4000/2016/Calendar-SQLite-ionic-3/';
+          this.page.identifier = '/2016/Calendar-SQLite-ionic-3';
+          this.page.title = 'Calendario com SQLite no Ionic 3';
+        };
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+      </div>
+
+      <footer class="footer">
+  <span class="footer__copyright">&copy; 2018 Kevin Martins. Todos os direitos reservados.</span>
+</footer> 
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+    </div>
+    <!-- Go to www.addthis.com/dashboard to customize your tools --> 
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59cd26ff028f56b6">
+    </script>
+  </body>
+</html>
