@@ -4,7 +4,7 @@ description: 'Web & Mobile App Developer'
 url: ''
 baseurl: 'https://KevinMartins367.github.io/'
 # google_analytics: 'UA-XXXXXX-X'
-disqus_shortname: '.kevinmartins367-github-io'
+disqus_shortname: 'kevinmartins367-github-io.'
 
 author:
   name: 'Kevin Martins'
