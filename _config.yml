@@ -2,9 +2,9 @@
 title: 'Kevin Martins'
 description: 'Web & Mobile App Developer'
 url: 'https://KevinMartins367.github.io/'
-baseurl: ''
+baseurl: 'https://KevinMartins367.github.io/'
 # google_analytics: 'UA-XXXXXX-X'
-disqus_shortname: 'KevinMartins367'
+disqus_shortname: 'kevinmartins367'
 
 author:
   name: 'Kevin Martins'
