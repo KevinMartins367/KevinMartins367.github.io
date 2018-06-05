@@ -1,7 +1,7 @@
 # Site settings
 title: 'Kevin Martins'
 description: 'Web & Mobile App Developer'
-url: ''
+url: 'https://KevinMartins367.github.io'
 baseurl: 'https://KevinMartins367.github.io/'
 # google_analytics: 'UA-XXXXXX-X'
 disqus_shortname: 'kevinmartins367-github-io.'
