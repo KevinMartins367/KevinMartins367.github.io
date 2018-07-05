@@ -1,7 +1,7 @@
 ---
 title: "CRUD SQLite no Ionic 3"
 date: "2018-01-08"
-tags: [ionic 3, sqlite]
+tags: [ionic 3, sqlite, Android, IOS, Hibrido ]
 description: "Aprenda inplementar o ionic 3 usando o SQLite"
 ---
 
