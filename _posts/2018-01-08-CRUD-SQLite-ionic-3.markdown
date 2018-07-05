@@ -2,6 +2,7 @@
 title: "CRUD SQLite no Ionic 3"
 date: "2018-01-08"
 tags: [ionic 3, sqlite]
+description: "Aprenda inplementar o ionic 3 usando o SQLite"
 ---
 
 Neste post, iremos implementar algumas funções básicas do SQLite no ionic 3.
