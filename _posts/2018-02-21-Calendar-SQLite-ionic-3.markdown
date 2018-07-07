@@ -1,8 +1,13 @@
 ---
 title: "Calendario com SQLite no Ionic 3"
 date: "2018-02-21"
-tags: [ionic 3, sqlite, directive, Android, IOS, Hibrido ]
-description: "Aprenda a criar um Calendar no ionic 3 usando o SQLite"
+tags: [ionic 3, 
+SQlite, 
+directive, 
+Android, 
+IOS, 
+Hibrido ]
+description: "Neste post, iremos implementar algumas funções basicas do SQLite no ionic 3 utilizando um directive de calendario."
 ---
 
 Neste post, iremos implementar algumas funções basicas do SQLite no ionic 3 utilizando um directive de calendario.
