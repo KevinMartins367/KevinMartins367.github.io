@@ -21,8 +21,6 @@ Neste post, iremos implementar algumas funções basicas do SQLite no ionic 3 ut
 + [Edit()](#id9)
 
 
-### [DEMO](http://KevinMartins367.github.io/Calendar-Sqlite-Ionic-3/demo/)
-
 ## <a name="id1"> Instalações necessárias: </a>
 
 1. npm install ionic2-calendar --save [ para mais informações clique [aqui](https://www.npmjs.com/package/ionic2-calendar) ]
