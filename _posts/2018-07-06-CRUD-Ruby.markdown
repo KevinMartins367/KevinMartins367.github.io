@@ -2,5 +2,6 @@
 title: "CRUD no Ruby com Postgresql e AWS"
 date: "2018-07-06"
 tags: [ Ruby on Rails, Postgresql, AWS, CRUD ]
+tag: "Ruby on Rails, Postgresql, AWS, CRUD"
 description: "Aprenda inplementar o ionic 3 usando o SQLite"
 ---
